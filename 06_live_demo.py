@@ -1,3 +1,4 @@
+import glob
 import os
 import subprocess
 import sys
@@ -88,7 +89,10 @@ class MultimodalImplicitMABSA(nn.Module):
 def load_ckpt(cls, filename):
     path = os.path.join(RESULTS_DIR, filename)
     if not os.path.exists(path):
-        return None
+        matches = glob.glob(f"/kaggle/input/**/{filename}", recursive=True)
+        if not matches:
+            return None
+        path = matches[0]
     model = cls().to(DEVICE)
     model.load_state_dict(torch.load(path, map_location=DEVICE))
     model.eval()
