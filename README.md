@@ -13,6 +13,7 @@ A deep learning research project investigating how combining **textual semantic 
 | `03_train_image_only.py` | Baseline 2 (Image-Only) | Fine-tunes `google/vit-base-patch16-224` on images alone (zero text) to predict Aspect Category and Sentiment. |
 | `04_train_multimodal.py` | Proposed System (Multimodal) | Combines `RoBERTa` + `ViT` with Bi-Directional Cross-Modal Attention (`t2v` & `v2t`) and Adaptive Gated Fusion for joint implicit ABSA. |
 | `05_evaluate_and_compare.py` | Evaluation & Figures | Aggregates Accuracy, Precision, Recall, Macro-F1, and Joint ABSA Accuracy across all 3 models and exports comparison charts. |
+| `06_live_demo.py` | Interactive Demo | Launches a Gradio web interface to test real-time predictions across Text-Only, Image-Only, and Multimodal models on custom image + caption inputs. |
 
 ---
 
